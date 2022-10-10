@@ -19,7 +19,8 @@ export class WordWrapBlausten implements WordWrap {
             console.log("1st length " + lengthTillLastSpace);
             while (charsArray[lengthTillLastSpace] != ' ') {
                 if (charsArray[lengthTillLastSpace] === undefined) {
-                    throw Error("ArrayIndexOutOfBoundsException : Index " + lengthTillLastSpace + " out of bounds for length " + charsArray.length)
+                    throw Error("ArrayIndexOutOfBoundsException : " +
+                        "Index " + lengthTillLastSpace + " out of bounds for length " + charsArray.length)
                 }
                 lengthTillLastSpace -= 1;
             }
