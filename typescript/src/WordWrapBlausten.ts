@@ -5,11 +5,11 @@ import WordWrap from "./WordWrap";
 
 export class WordWrapBlausten implements WordWrap {
 
-    public wrap(text:string, columnLength:number):string {
+    public wrap(text: string, columnLength: number): string {
         const textLength = text.length;
-        if(textLength < columnLength) return text;
+        if (textLength < columnLength) return text;
         const charsArray = text.split('');
-        const  textSections:string[] = [];
+        const textSections: string[] = [];
         const sectionCount = textLength / columnLength;
         let charIndex = 0;
 
@@ -18,6 +18,9 @@ export class WordWrapBlausten implements WordWrap {
             let lengthTillLastSpace = charIndex + columnLength;
             console.log("1st length " + lengthTillLastSpace);
             while (charsArray[lengthTillLastSpace] != ' ') {
+                if (charsArray[lengthTillLastSpace] === undefined) {
+                    throw Error("ArrayIndexOutOfBoundsException : Index " + lengthTillLastSpace + " out of bounds for length " + charsArray.length)
+                }
                 lengthTillLastSpace -= 1;
             }
             const charsInThisSection = lengthTillLastSpace - charIndex;
@@ -34,7 +37,7 @@ export class WordWrapBlausten implements WordWrap {
         console.log("Text Length " + textLength);
         const remainingChars = textLength % charIndex;
         console.log("Remaining " + remainingChars);
-        if(remainingChars > 0) {
+        if (remainingChars > 0) {
             let section = "";
             for (let n = 0; n < remainingChars; n++) {
                 section += charsArray[charIndex];
