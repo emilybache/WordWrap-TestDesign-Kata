@@ -1,0 +1,35 @@
+{
+  "name": "word-wrap-test-design-typescript",
+  "version": "1.0.0",
+  "description": "Typescript implementation of the kata \"WordWrap\" for test design",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:vitest": "vitest -- --reporters=verbose text",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:mutation": "stryker run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:emilybache/WordWrap-TestDesign-Kata.git"
+  },
+  "keywords": [
+    "kata",
+    "refactoring"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@stryker-mutator/core": "^6.2.2",
+    "@stryker-mutator/jest-runner": "^6.2.2",
+    "@types/jest": "^26.0.24",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.0",
+    "typescript": "^3.9.5",
+    "vitest": "^0.23.4"
+  },
+  "dependencies": {
+    "@types/mocha": "^10.0.0"
+  }
+}
